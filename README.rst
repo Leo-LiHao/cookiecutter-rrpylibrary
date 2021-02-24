@@ -56,9 +56,10 @@ Quickstart
     # Install pipx if cookiecutter are not installed
     python -m pip install --user pipx
     python -m pipx ensurepath
-
+    
+    # **Close current terminal and open a new one**
     # Use cookiecutter to create project from this template
-    pipx run cookiecutter gh:HuangKaiHuan/cookiecutter-rrpylibrary.git
+    pipx run cookiecutter https://github.com/HuangKaiHuan/cookiecutter-rrpylibrary.git
 
     # Push initial commit
     cd existing_folder
@@ -67,20 +68,19 @@ Quickstart
     git commit -m "First commit"
     git tag 0.1.0 (must 0.1.0)
 
-    # create virtualenv(recommend)
+    # Create virtualenv(recommend)
     python -m venv venv
     source venv/bin/activate
 
-    # install dependencies
+    # Install dependencies
     pip install -e .[dev]
 
-    # setup pre-commit, pre-push, commit-msg hooks
+    # Setup pre-commit, pre-push, commit-msg hooks
     pre-commit install -t pre-commit
     pre-commit install -t pre-push
     pre-commit install -t commit-msg
 
-    # Push to remote repo
-    create a repo and put it there.
+    # Push to remote repo, you should create a repo first.
     git remote add origin git@$repo_hosting_domain:$repo_username/$project_name.git
     git push -u origin master
 
